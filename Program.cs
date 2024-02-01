@@ -9,9 +9,7 @@ for (int i = 0; i < n; i++)
     string[] row = ReadLine().Split(' ');
     for (int j = 0; j < n; j++)
     {
-        int num = 0;
-
-        if (!int.TryParse(row[j], out num))
+        if (!int.TryParse(row[j], out int num))
         {
             WriteLine($"Invalid number entered. Input: {row[j]}");
             break;
