@@ -9,13 +9,22 @@ for (int i = 0; i < n; i++)
     string[] row = ReadLine().Split(' ');
     for (int j = 0; j < n; j++)
     {
-        if (!int.TryParse(row[j], out _))
+        int num = 0;
+
+        if (!int.TryParse(row[j], out num))
         {
             WriteLine($"Invalid number entered. Input: {row[j]}");
             break;
         }
+
+        if (!(-100 <= num && num <= 100))
+        {
+            WriteLine("Number out of range. Number must be within -100 to 100");
+            break;
+        }
             
-        matrix[i, j] = int.Parse(row[j]);
+            
+        matrix[i, j] = num;
     }
 }
 
